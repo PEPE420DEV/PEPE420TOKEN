@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$PEPE420 Official</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #00FF00;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button {
+            background-color: transparent;
+            border: none;
+            color: #00FF00;
+            font-size: 1.5em;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .button:active {
+            color: #00cc00;
+        }
+
+        #ca-copied {
+            display: none;
+            color: yellow;
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+
+        .links {
+            margin-bottom: 40px;
+        }
+
+        .links a {
+            color: #00FF00;
+            text-decoration: none;
+            font-size: 1.5em;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <div style="font-size: 5em; margin-bottom: 40px;">$PEPE420</div>
+
+        <div class="links">
+            <a href="https://twitter.com/yourtwitter" target="_blank">[TWITTER]</a>
+            <a href="https://t.me/yourtelegram" target="_blank">[TELEGRAM]</a>
+            <a href="https://raydium.io" target="_blank">[RAYDIUM]</a>
+            <a href="https://dexscreener.com" target="_blank">[DEXSCREENER]</a>
+        </div>
+
+        <button class="button" id="copyCAButton" onclick="copyCA()">[COPY CA]</button>
+        <div id="ca-copied">CA COPIED!</div>
+    </div>
+
+    <script>
+        function copyCA() {
+            const caAddress = "0xYourContractAddress"; // Replace with your actual contract address
+            const textarea = document.createElement("textarea");
+            textarea.value = caAddress;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+
+            // Show feedback message
+            const copiedMessage = document.getElementById("ca-copied");
+            copiedMessage.style.display = "block";
+            setTimeout(() => {
+                copiedMessage.style.display = "none";
+            }, 800);
+        }
+    </script>
+
+</body>
+</html>
